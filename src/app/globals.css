@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1a237e;
+  --red: #c62828;
+  --silver: #b0bec5;
+  --gold: #ffd600;
+  --cream: #faf3e0;
+  --ink: #1a1a1a;
+  --white: #ffffff;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-red: var(--red);
+  --color-silver: var(--silver);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+
+  --font-headline: var(--font-oswald);
+  --font-body: var(--font-courier-prime);
+  --font-accent: var(--font-special-elite);
+}
+
+/* ─── Base Styles ─────────────────────────────────────────── */
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body), "Courier New", monospace;
+  line-height: 1.75;
+}
+
+/* ─── Film Grain Overlay ──────────────────────────────────── */
+
+.film-grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ─── Diagonal Stripes Pattern ────────────────────────────── */
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 214, 0, 0.06) 10px,
+    rgba(255, 214, 0, 0.06) 20px
+  );
+}
+
+/* ─── Retro Card ──────────────────────────────────────────── */
+
+.retro-card {
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background-color: var(--white);
+}
+
+.retro-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+/* ─── Headline Stamp ──────────────────────────────────────── */
+
+.headline-stamp {
+  font-family: var(--font-headline), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+/* ─── Typewriter Accent ───────────────────────────────────── */
+
+.typewriter-accent {
+  font-family: var(--font-accent), "Courier New", monospace;
+}
+
+/* ─── Retro Button ────────────────────────────────────────── */
+
+.retro-button {
+  display: inline-block;
+  font-family: var(--font-headline), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 0.625rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.retro-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.retro-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* ─── Prose Styling for Blog Posts ─────────────────────────── */
+
+.prose-allmet {
+  font-family: var(--font-body), "Courier New", monospace;
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.prose-allmet h1,
+.prose-allmet h2,
+.prose-allmet h3,
+.prose-allmet h4 {
+  font-family: var(--font-headline), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose-allmet h1 {
+  font-size: 2rem;
+}
+
+.prose-allmet h2 {
+  font-size: 1.5rem;
+}
+
+.prose-allmet h3 {
+  font-size: 1.25rem;
+}
+
+.prose-allmet p {
+  margin-bottom: 1.25em;
+}
+
+.prose-allmet a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-allmet a:hover {
+  color: var(--navy);
+}
+
+.prose-allmet blockquote {
+  border-left: 4px solid var(--gold);
+  padding-left: 1.25rem;
+  font-family: var(--font-accent), "Courier New", monospace;
+  font-style: italic;
+  color: #444;
+  margin: 1.5em 0;
+}
+
+.prose-allmet ul,
+.prose-allmet ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25em;
+}
+
+.prose-allmet li {
+  margin-bottom: 0.35em;
+}
+
+.prose-allmet code {
+  background-color: #e8e0d0;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.prose-allmet pre {
+  background-color: var(--ink);
+  color: var(--gold);
+  padding: 1.25rem;
+  border-radius: 0;
+  border: 3px solid var(--ink);
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.prose-allmet pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.prose-allmet img {
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.prose-allmet hr {
+  border: none;
+  border-top: 3px solid var(--red);
+  margin: 2.5em 0;
+}
+
+/* ─── Ticker Animation ────────────────────────────────────── */
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animate {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+/* ─── Category Bar Colors ─────────────────────────────────── */
+
+.category-bar-football {
+  background-color: #7b1fa2;
+}
+.category-bar-baseball {
+  background-color: var(--red);
+}
+.category-bar-basketball {
+  background-color: #e65100;
+}
+.category-bar-hockey {
+  background-color: var(--navy);
+}
+.category-bar-soccer {
+  background-color: #2e7d32;
+}
+.category-bar-technology {
+  background-color: #0277bd;
+}
