@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { getAllPosts, getPostsByCategory } from "@/lib/posts";
+import { getAllPosts, getPostsBySectionAndTeam } from "@/lib/posts";
 import BlogCard from "@/components/ui/BlogCard";
 import CategoryFilter from "@/components/ui/CategoryFilter";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -11,14 +11,16 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ section?: string; team?: string }>;
 }
 
 export default async function WrittenShitPage({ searchParams }: Props) {
-  const { category } = await searchParams;
-  const activeCategory = category || "All";
+  const { section, team } = await searchParams;
+  const activeSection = section || "All";
   const posts =
-    activeCategory === "All" ? getAllPosts() : getPostsByCategory(activeCategory);
+    activeSection === "All"
+      ? getAllPosts()
+      : getPostsBySectionAndTeam(activeSection, team);
 
   return (
     <div className="py-16 md:py-20">

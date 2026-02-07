@@ -8,7 +8,7 @@ export default function MobileMenu() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Hamburger / X Button */}
       <button
         onClick={() => setOpen(!open)}
@@ -34,13 +34,13 @@ export default function MobileMenu() {
 
       {/* Overlay */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-navy flex flex-col items-center justify-center gap-10">
+        <div className="fixed inset-0 z-40 bg-navy flex flex-col items-center justify-center gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="headline-stamp text-cream text-3xl tracking-widest hover:text-gold transition-colors"
+              className="headline-stamp text-cream text-2xl tracking-widest hover:text-gold transition-colors"
             >
               {link.label}
             </Link>

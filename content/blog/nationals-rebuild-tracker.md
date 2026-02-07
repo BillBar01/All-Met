@@ -2,7 +2,8 @@
 title: "Nationals Rebuild Tracker: Are We There Yet?"
 author: "Bill Barlia"
 date: "2026-01-28"
-category: "Baseball"
+section: "Pro Sports"
+team: "Nationals"
 excerpt: "The Nats have been rebuilding for what feels like a geological epoch. Here's an honest look at where the farm system actually stands."
 ---
 

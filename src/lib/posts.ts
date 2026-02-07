@@ -41,10 +41,27 @@ export async function getPostContentHtml(content: string): Promise<string> {
   return result.toString();
 }
 
-export function getPostsByCategory(category: string): Post[] {
+export function getPostsBySection(section: string): Post[] {
   const posts = getAllPosts();
-  if (category === "All") return posts;
+  if (section === "All") return posts;
   return posts.filter(
-    (post) => post.category.toLowerCase() === category.toLowerCase()
+    (post) => post.section.toLowerCase() === section.toLowerCase()
   );
+}
+
+export function getPostsByTeam(team: string): Post[] {
+  const posts = getAllPosts();
+  return posts.filter(
+    (post) => post.team && post.team.toLowerCase() === team.toLowerCase()
+  );
+}
+
+export function getPostsBySectionAndTeam(
+  section: string,
+  team?: string
+): Post[] {
+  if (team && team !== "All Teams") {
+    return getPostsByTeam(team);
+  }
+  return getPostsBySection(section);
 }

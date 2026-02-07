@@ -226,23 +226,44 @@ body {
   animation: ticker-scroll 30s linear infinite;
 }
 
-/* ─── Category Bar Colors ─────────────────────────────────── */
+/* ─── Category Bar Colors (by team / section) ────────────── */
 
-.category-bar-football {
+.category-bar-commanders {
   background-color: #7b1fa2;
 }
-.category-bar-baseball {
+.category-bar-nationals {
   background-color: var(--red);
 }
-.category-bar-basketball {
+.category-bar-wizards {
   background-color: #e65100;
 }
-.category-bar-hockey {
+.category-bar-capitals {
   background-color: var(--navy);
 }
-.category-bar-soccer {
+.category-bar-dc-united {
   background-color: #2e7d32;
 }
 .category-bar-technology {
   background-color: #0277bd;
+}
+.category-bar-high-school {
+  background-color: #ad1457;
+}
+.category-bar-college {
+  background-color: #4527a0;
+}
+.category-bar-georgetown {
+  background-color: #1565c0;
+}
+.category-bar-maryland {
+  background-color: #c62828;
+}
+.category-bar-howard {
+  background-color: #1a237e;
+}
+.category-bar-george-washington {
+  background-color: #00695c;
+}
+.category-bar-pro-sports {
+  background-color: var(--gold);
 }

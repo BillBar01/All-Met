@@ -20,11 +20,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function getCategoryBarClass(section: string, team?: string): string {
+  if (team) {
+    return `category-bar-${team.toLowerCase().replace(/\s+/g, "-")}`;
+  }
+  return `category-bar-${section.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   const contentHtml = await getPostContentHtml(post.content);
-  const categoryClass = `category-bar-${post.category.toLowerCase()}`;
+  const categoryClass = getCategoryBarClass(post.section, post.team);
+  const label = post.team || post.section;
 
   return (
     <article className="py-16 md:py-20">
@@ -43,10 +51,18 @@ export default async function PostPage({ params }: Props) {
           <h1 className="headline-stamp text-navy text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-sm">
             <span className="headline-stamp text-red tracking-wider">
-              {post.category}
+              {label}
             </span>
+            {post.team && (
+              <>
+                <span className="text-silver">|</span>
+                <span className="headline-stamp text-navy/60 tracking-wider text-xs">
+                  {post.section}
+                </span>
+              </>
+            )}
             <span className="text-silver">|</span>
             <span className="text-silver">
               {format(new Date(post.date), "MMMM d, yyyy")}

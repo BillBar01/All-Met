@@ -2,7 +2,7 @@
 title: "DC's Tech Scene Needs to Stop Playing It Safe"
 author: "Bill Barlia"
 date: "2026-01-25"
-category: "Technology"
+section: "Technology"
 excerpt: "The District has the talent, the capital, and the infrastructure. So why does its tech scene still feel like it's running on government contractor energy?"
 ---
 

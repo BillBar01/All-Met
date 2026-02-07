@@ -2,7 +2,8 @@ export interface PostFrontmatter {
   title: string;
   author: string;
   date: string;
-  category: string;
+  section: string;
+  team?: string;
   excerpt: string;
   image?: string;
 }

@@ -6,8 +6,16 @@ interface BlogCardProps {
   post: Post;
 }
 
+function getCategoryBarClass(post: Post): string {
+  if (post.team) {
+    return `category-bar-${post.team.toLowerCase().replace(/\s+/g, "-")}`;
+  }
+  return `category-bar-${post.section.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
 export default function BlogCard({ post }: BlogCardProps) {
-  const categoryClass = `category-bar-${post.category.toLowerCase()}`;
+  const categoryClass = getCategoryBarClass(post);
+  const label = post.team || post.section;
 
   return (
     <Link href={`/written-shit/${post.slug}`} className="block">
@@ -19,7 +27,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           {/* Meta */}
           <div className="flex items-center gap-3 mb-3">
             <span className="headline-stamp text-xs text-red tracking-wider">
-              {post.category}
+              {label}
             </span>
             <span className="text-silver text-xs">
               {format(new Date(post.date), "MMM d, yyyy")}

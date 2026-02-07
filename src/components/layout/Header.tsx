@@ -8,17 +8,17 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="headline-stamp text-gold text-2xl tracking-wider">
+          <Link href="/" className="headline-stamp text-gold text-2xl tracking-wider shrink-0">
             {SITE_NAME}
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="headline-stamp text-cream text-sm tracking-widest hover:text-gold transition-colors"
+                className="headline-stamp text-cream text-xs xl:text-sm tracking-widest hover:text-gold transition-colors whitespace-nowrap"
               >
                 {link.label}
               </Link>
