@@ -3,7 +3,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
   title: "What We Are",
-  description: "The All Met — what we stand for, how we operate, and why we exist.",
+  description: "ALL MET — what we stand for, how we operate, and why we exist.",
 };
 
 const VALUES = [
@@ -15,7 +15,7 @@ const VALUES = [
   {
     title: "DC First",
     description:
-      "This city has its own sports culture and tech identity. We cover it like insiders because we are insiders.",
+      "This city has its own sports culture and business identity. We cover it like insiders because we are insiders.",
   },
   {
     title: "Straight Talk",
@@ -36,14 +36,14 @@ export default function WhatWeArePage() {
         <SectionHeading className="mb-12">What We Are</SectionHeading>
 
         {/* Mission Block */}
-        <div className="bg-navy diagonal-stripes p-8 md:p-12 border-3 border-ink shadow-[6px_6px_0_var(--ink)] mb-16">
-          <h2 className="headline-stamp text-gold text-2xl md:text-3xl mb-4 text-center">
+        <div className="bg-navy diagonal-stripes p-8 md:p-12 border-3 border-navy shadow-[6px_6px_0_var(--navy)] mb-16">
+          <h2 className="headline-stamp text-white text-2xl md:text-3xl mb-4 text-center">
             Our Mission
           </h2>
-          <p className="typewriter-accent text-cream text-lg md:text-xl text-center leading-relaxed max-w-2xl mx-auto">
-            To cover DC sports and technology with honesty, attitude, and zero
-            tolerance for bullshit. We believe this city deserves better coverage —
-            so we&apos;re building it.
+          <p className="typewriter-accent text-white text-lg md:text-xl text-center leading-relaxed max-w-2xl mx-auto">
+            To cover DC sports and business with honesty, attitude, and a
+            relentless commitment to the truth. We believe this city deserves
+            better coverage — so we&apos;re building it.
           </p>
         </div>
 
@@ -51,11 +51,11 @@ export default function WhatWeArePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {VALUES.map((value) => (
             <div key={value.title} className="retro-card p-6">
-              <div className="h-2 bg-gold mb-4" />
+              <div className="h-2 bg-red mb-4" />
               <h3 className="headline-stamp text-navy text-lg mb-3">
                 {value.title}
               </h3>
-              <p className="text-ink/70 text-sm leading-relaxed">
+              <p className="text-navy/70 text-sm leading-relaxed">
                 {value.description}
               </p>
             </div>
@@ -64,8 +64,8 @@ export default function WhatWeArePage() {
 
         {/* Closing */}
         <div className="text-center">
-          <p className="typewriter-accent text-ink/60 text-lg">
-            This is The All Met. Read us or don&apos;t. But don&apos;t say you weren&apos;t told.
+          <p className="typewriter-accent text-navy/60 text-lg">
+            This is ALL MET. Washington&apos;s Own. Read us or don&apos;t — but don&apos;t say you weren&apos;t told.
           </p>
         </div>
       </div>

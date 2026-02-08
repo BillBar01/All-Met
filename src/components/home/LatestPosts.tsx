@@ -9,7 +9,7 @@ export default function LatestPosts() {
   return (
     <section className="py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading className="mb-10">Latest Written Shit</SectionHeading>
+        <SectionHeading className="mb-10">Latest Articles</SectionHeading>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
@@ -19,8 +19,8 @@ export default function LatestPosts() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/written-shit"
-            className="retro-button bg-navy text-cream text-sm"
+            href="/sports"
+            className="retro-button bg-navy text-white text-sm"
           >
             Read All
           </Link>

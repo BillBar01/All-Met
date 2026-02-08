@@ -4,7 +4,7 @@ import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Newsletters",
-  description: "Subscribe to The All Met newsletters — DC sports and tech delivered to your inbox.",
+  description: "Subscribe to ALL MET newsletters — DC sports and business delivered to your inbox.",
 };
 
 const NEWSLETTERS = [
@@ -12,7 +12,7 @@ const NEWSLETTERS = [
     name: "The Daily Rundown",
     frequency: "Every weekday morning",
     description:
-      "Your 5-minute briefing on everything DC sports and tech. Scores, headlines, and the takes that matter — no filler, no fluff. In your inbox before your first coffee.",
+      "Your 5-minute briefing on everything DC sports and business. Scores, headlines, and the takes that matter — no filler, no fluff. In your inbox before your first coffee.",
   },
   {
     name: "The Deep Cut",
@@ -28,9 +28,9 @@ export default function NewslettersPage() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading className="mb-6">Newsletters</SectionHeading>
 
-        <p className="text-ink/70 text-center max-w-2xl mx-auto mb-12">
+        <p className="text-navy/70 text-center max-w-2xl mx-auto mb-12">
           We write it. You read it. No algorithms deciding what you see — just straight-up
-          DC sports and tech coverage delivered to your inbox.
+          DC sports and business coverage delivered to your inbox.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -40,18 +40,18 @@ export default function NewslettersPage() {
               <h3 className="headline-stamp text-navy text-xl mb-2">
                 {newsletter.name}
               </h3>
-              <p className="typewriter-accent text-gold text-sm mb-4">
+              <p className="typewriter-accent text-red text-sm mb-4">
                 {newsletter.frequency}
               </p>
-              <p className="text-ink/70 text-sm leading-relaxed">
+              <p className="text-navy/70 text-sm leading-relaxed">
                 {newsletter.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="bg-navy diagonal-stripes p-8 md:p-12 border-3 border-ink shadow-[6px_6px_0_var(--ink)]">
-          <h3 className="headline-stamp text-gold text-2xl mb-2 text-center">
+        <div className="bg-navy diagonal-stripes p-8 md:p-12 border-3 border-navy shadow-[6px_6px_0_var(--navy)]">
+          <h3 className="headline-stamp text-white text-2xl mb-2 text-center">
             Get On The List
           </h3>
           <p className="typewriter-accent text-silver text-sm mb-6 text-center">

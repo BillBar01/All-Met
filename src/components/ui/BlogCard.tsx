@@ -18,7 +18,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   const label = post.team || post.section;
 
   return (
-    <Link href={`/written-shit/${post.slug}`} className="block">
+    <Link href={`/articles/${post.slug}`} className="block">
       <article className="retro-card flex flex-col h-full">
         {/* Category Bar */}
         <div className={`h-2 ${categoryClass}`} />
@@ -40,7 +40,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           </h3>
 
           {/* Excerpt */}
-          <p className="text-ink/70 text-sm flex-1 leading-relaxed">
+          <p className="text-navy/70 text-sm flex-1 leading-relaxed">
             {post.excerpt}
           </p>
 

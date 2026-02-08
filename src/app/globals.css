@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #1a237e;
-  --red: #c62828;
-  --silver: #b0bec5;
-  --gold: #ffd600;
-  --cream: #faf3e0;
-  --ink: #1a1a1a;
+  --navy: #041a3c;
+  --red: #d51f0f;
+  --silver: #768890;
   --white: #ffffff;
 }
 
@@ -14,11 +11,8 @@
   --color-navy: var(--navy);
   --color-red: var(--red);
   --color-silver: var(--silver);
-  --color-gold: var(--gold);
-  --color-cream: var(--cream);
-  --color-ink: var(--ink);
 
-  --font-headline: var(--font-oswald);
+  --font-headline: var(--font-courier-prime);
   --font-body: var(--font-courier-prime);
   --font-accent: var(--font-special-elite);
 }
@@ -26,8 +20,8 @@
 /* ─── Base Styles ─────────────────────────────────────────── */
 
 body {
-  background-color: var(--cream);
-  color: var(--ink);
+  background-color: var(--white);
+  color: var(--navy);
   font-family: var(--font-body), "Courier New", monospace;
   line-height: 1.75;
 }
@@ -40,7 +34,7 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 128px 128px;
 }
@@ -52,29 +46,29 @@ body {
     -45deg,
     transparent,
     transparent 10px,
-    rgba(255, 214, 0, 0.06) 10px,
-    rgba(255, 214, 0, 0.06) 20px
+    rgba(213, 31, 15, 0.06) 10px,
+    rgba(213, 31, 15, 0.06) 20px
   );
 }
 
 /* ─── Retro Card ──────────────────────────────────────────── */
 
 .retro-card {
-  border: 3px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
+  border: 3px solid var(--navy);
+  box-shadow: 6px 6px 0 var(--navy);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   background-color: var(--white);
 }
 
 .retro-card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0 var(--ink);
+  box-shadow: 9px 9px 0 var(--navy);
 }
 
 /* ─── Headline Stamp ──────────────────────────────────────── */
 
 .headline-stamp {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
@@ -90,12 +84,12 @@ body {
 
 .retro-button {
   display: inline-block;
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
-  border: 3px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
+  border: 3px solid var(--navy);
+  box-shadow: 4px 4px 0 var(--navy);
   padding: 0.625rem 1.5rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
@@ -103,12 +97,26 @@ body {
 
 .retro-button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--navy);
 }
 
 .retro-button:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--navy);
+}
+
+/* ─── Wordmark Metallic ──────────────────────────────────── */
+
+.wordmark-metallic {
+  font-family: var(--font-headline), "Courier New", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow:
+    0 1px 0 #768890,
+    0 2px 0 #657880,
+    0 3px 0 #566870,
+    0 0 10px rgba(118, 136, 144, 0.3);
 }
 
 /* ─── Prose Styling for Blog Posts ─────────────────────────── */
@@ -123,7 +131,7 @@ body {
 .prose-allmet h2,
 .prose-allmet h3,
 .prose-allmet h4 {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-weight: 700;
@@ -159,7 +167,7 @@ body {
 }
 
 .prose-allmet blockquote {
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--red);
   padding-left: 1.25rem;
   font-family: var(--font-accent), "Courier New", monospace;
   font-style: italic;
@@ -178,18 +186,18 @@ body {
 }
 
 .prose-allmet code {
-  background-color: #e8e0d0;
+  background-color: #e8eaec;
   padding: 0.15em 0.4em;
   border-radius: 3px;
   font-size: 0.9em;
 }
 
 .prose-allmet pre {
-  background-color: var(--ink);
-  color: var(--gold);
+  background-color: var(--navy);
+  color: var(--white);
   padding: 1.25rem;
   border-radius: 0;
-  border: 3px solid var(--ink);
+  border: 3px solid var(--navy);
   overflow-x: auto;
   margin: 1.5em 0;
 }
@@ -201,8 +209,8 @@ body {
 }
 
 .prose-allmet img {
-  border: 3px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
+  border: 3px solid var(--navy);
+  box-shadow: 6px 6px 0 var(--navy);
 }
 
 .prose-allmet hr {
@@ -243,7 +251,13 @@ body {
 .category-bar-dc-united {
   background-color: #2e7d32;
 }
-.category-bar-technology {
+.category-bar-mystics {
+  background-color: #0d47a1;
+}
+.category-bar-spirit {
+  background-color: #b71c1c;
+}
+.category-bar-business {
   background-color: #0277bd;
 }
 .category-bar-high-school {
@@ -258,12 +272,12 @@ body {
 .category-bar-maryland {
   background-color: #c62828;
 }
-.category-bar-howard {
-  background-color: #1a237e;
+.category-bar-george-mason {
+  background-color: #1b5e20;
 }
 .category-bar-george-washington {
   background-color: #00695c;
 }
 .category-bar-pro-sports {
-  background-color: var(--gold);
+  background-color: var(--red);
 }

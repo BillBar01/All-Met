@@ -1,7 +1,11 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { WRITTEN_SHIT_FILTERS, PRO_SPORTS_SUB_FILTERS } from "@/lib/constants";
+import {
+  SPORTS_SECTION_FILTERS,
+  SPORTS_PRO_SUB_FILTERS,
+  SPORTS_COLLEGE_SUB_FILTERS,
+} from "@/lib/constants";
 
 export default function CategoryFilter() {
   const router = useRouter();
@@ -11,34 +15,37 @@ export default function CategoryFilter() {
 
   const handleSection = (section: string) => {
     if (section === "All") {
-      router.push("/written-shit");
+      router.push("/sports");
     } else {
-      router.push(`/written-shit?section=${encodeURIComponent(section)}`);
+      router.push(`/sports?section=${encodeURIComponent(section)}`);
     }
   };
 
-  const handleTeam = (team: string) => {
+  const handleTeam = (team: string, section: string) => {
     if (team === "All Teams") {
-      router.push(`/written-shit?section=Pro+Sports`);
+      router.push(`/sports?section=${encodeURIComponent(section)}`);
     } else {
       router.push(
-        `/written-shit?section=Pro+Sports&team=${encodeURIComponent(team)}`
+        `/sports?section=${encodeURIComponent(section)}&team=${encodeURIComponent(team)}`
       );
     }
   };
+
+  const showProSubs = activeSection === "Pro Sports";
+  const showCollegeSubs = activeSection === "College";
 
   return (
     <div className="space-y-4">
       {/* Section filters */}
       <div className="flex flex-wrap gap-3">
-        {WRITTEN_SHIT_FILTERS.map((section) => (
+        {SPORTS_SECTION_FILTERS.map((section) => (
           <button
             key={section}
             onClick={() => handleSection(section)}
-            className={`headline-stamp text-xs tracking-wider px-4 py-2 border-2 border-ink transition-all ${
+            className={`headline-stamp text-xs tracking-wider px-4 py-2 border-2 transition-all ${
               activeSection === section
-                ? "bg-navy text-cream shadow-[3px_3px_0_var(--ink)]"
-                : "bg-cream text-ink hover:bg-navy hover:text-cream"
+                ? "bg-red text-white border-red shadow-[3px_3px_0_var(--navy)]"
+                : "text-silver border-silver hover:text-navy hover:border-navy"
             }`}
           >
             {section}
@@ -46,17 +53,36 @@ export default function CategoryFilter() {
         ))}
       </div>
 
-      {/* Team sub-filters (only when Pro Sports is active) */}
-      {activeSection === "Pro Sports" && (
-        <div className="flex flex-wrap gap-2 pl-2 border-l-4 border-gold">
-          {PRO_SPORTS_SUB_FILTERS.map((team) => (
+      {/* Pro Sports team sub-filters */}
+      {showProSubs && (
+        <div className="flex flex-wrap gap-2 pl-2 border-l-4 border-red">
+          {SPORTS_PRO_SUB_FILTERS.map((team) => (
             <button
               key={team}
-              onClick={() => handleTeam(team)}
-              className={`headline-stamp text-xs tracking-wider px-3 py-1.5 border-2 border-ink transition-all ${
+              onClick={() => handleTeam(team, "Pro Sports")}
+              className={`headline-stamp text-xs tracking-wider px-3 py-1.5 border-2 transition-all ${
                 activeTeam === team
-                  ? "bg-red text-cream shadow-[2px_2px_0_var(--ink)]"
-                  : "bg-cream text-ink hover:bg-red hover:text-cream"
+                  ? "bg-red text-white border-red shadow-[2px_2px_0_var(--navy)]"
+                  : "text-silver border-silver hover:text-navy hover:border-navy"
+              }`}
+            >
+              {team}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* College team sub-filters */}
+      {showCollegeSubs && (
+        <div className="flex flex-wrap gap-2 pl-2 border-l-4 border-red">
+          {SPORTS_COLLEGE_SUB_FILTERS.map((team) => (
+            <button
+              key={team}
+              onClick={() => handleTeam(team, "College")}
+              className={`headline-stamp text-xs tracking-wider px-3 py-1.5 border-2 transition-all ${
+                activeTeam === team
+                  ? "bg-red text-white border-red shadow-[2px_2px_0_var(--navy)]"
+                  : "text-silver border-silver hover:text-navy hover:border-navy"
               }`}
             >
               {team}

@@ -1,15 +1,9 @@
-import { Special_Elite, Oswald, Courier_Prime } from "next/font/google";
+import { Special_Elite, Courier_Prime } from "next/font/google";
 
 export const specialElite = Special_Elite({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-special-elite",
-  display: "swap",
-});
-
-export const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
   display: "swap",
 });
 

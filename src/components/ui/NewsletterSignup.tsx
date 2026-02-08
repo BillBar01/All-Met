@@ -20,7 +20,7 @@ export default function NewsletterSignup({ variant = "default" }: NewsletterSign
 
   if (submitted) {
     return (
-      <p className={`typewriter-accent text-lg ${variant === "hero" ? "text-gold" : "text-navy"}`}>
+      <p className={`typewriter-accent text-lg ${variant === "hero" ? "text-white" : "text-navy"}`}>
         You&apos;re in. Watch your inbox.
       </p>
     );
@@ -36,14 +36,14 @@ export default function NewsletterSignup({ variant = "default" }: NewsletterSign
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
         required
-        className={`flex-1 px-4 py-3 border-3 border-ink font-body text-sm ${
-          isHero ? "bg-cream text-ink" : "bg-white text-ink"
-        } focus:outline-none focus:ring-2 focus:ring-gold`}
+        className={`flex-1 px-4 py-3 border-3 border-navy font-body text-sm ${
+          isHero ? "bg-white text-navy" : "bg-white text-navy"
+        } focus:outline-none focus:ring-2 focus:ring-red`}
       />
       <button
         type="submit"
         className={`retro-button text-sm ${
-          isHero ? "bg-red text-cream" : "bg-navy text-cream"
+          isHero ? "bg-red text-white" : "bg-navy text-white"
         }`}
       >
         Subscribe

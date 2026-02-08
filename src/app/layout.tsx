@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { specialElite, oswald, courierPrime } from "@/lib/fonts";
+import { specialElite, courierPrime } from "@/lib/fonts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${specialElite.variable} ${oswald.variable} ${courierPrime.variable} film-grain antialiased`}
+        className={`${specialElite.variable} ${courierPrime.variable} film-grain antialiased`}
       >
         <Header />
         <main className="min-h-screen">{children}</main>

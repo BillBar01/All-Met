@@ -4,19 +4,19 @@ import BlogCard from "@/components/ui/BlogCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Technology",
-  description: "DC tech scene coverage — startups, AI, cybersecurity, and the people building the future.",
+  title: "Business",
+  description: "DC business coverage — startups, AI, cybersecurity, and the people building the future.",
 };
 
-export default function TechnologyPage() {
-  const posts = getPostsBySection("Technology");
+export default function BusinessPage() {
+  const posts = getPostsBySection("Business");
 
   return (
     <div className="py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading className="mb-4">Technology</SectionHeading>
-        <p className="text-center text-ink/70 max-w-2xl mx-auto mb-16">
-          The DC tech scene is more than government contractors in hoodies.
+        <SectionHeading className="mb-4">Business</SectionHeading>
+        <p className="text-center text-navy/70 max-w-2xl mx-auto mb-16">
+          The DC business scene is more than government contractors in hoodies.
           We cover the builders, the breakers, and the companies that actually matter.
         </p>
 
@@ -29,7 +29,7 @@ export default function TechnologyPage() {
         ) : (
           <div className="text-center py-16">
             <p className="typewriter-accent text-silver text-xl">
-              Tech takes incoming. Stay tuned.
+              Business coverage incoming. Stay tuned.
             </p>
           </div>
         )}

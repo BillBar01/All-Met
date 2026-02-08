@@ -39,10 +39,10 @@ export default async function PostPage({ params }: Props) {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Back link */}
         <Link
-          href="/written-shit"
+          href="/sports"
           className="headline-stamp text-red text-sm tracking-wider hover:text-navy transition-colors mb-8 inline-block"
         >
-          &larr; Back to Written Shit
+          &larr; Back to Sports
         </Link>
 
         {/* Header */}
@@ -68,7 +68,7 @@ export default async function PostPage({ params }: Props) {
               {format(new Date(post.date), "MMMM d, yyyy")}
             </span>
             <span className="text-silver">|</span>
-            <span className="typewriter-accent text-ink/60">
+            <span className="typewriter-accent text-navy/60">
               By {post.author}
             </span>
           </div>
@@ -83,10 +83,10 @@ export default async function PostPage({ params }: Props) {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t-3 border-red">
           <Link
-            href="/written-shit"
-            className="retro-button bg-navy text-cream text-sm"
+            href="/sports"
+            className="retro-button bg-navy text-white text-sm"
           >
-            More Written Shit
+            More Articles
           </Link>
         </div>
       </div>

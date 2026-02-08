@@ -2,7 +2,7 @@
 title: "The Tech Talent War: DC vs. Everyone"
 author: "Bill Barlia"
 date: "2026-01-12"
-section: "Technology"
+section: "Business"
 excerpt: "Remote work changed everything. Now DC is competing with Austin, Miami, and the Bay for the same engineers. Here's how it stacks up."
 ---
 

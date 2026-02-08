@@ -11,11 +11,11 @@ export default function ScoresTicker() {
   const scores = [...PLACEHOLDER_SCORES, ...PLACEHOLDER_SCORES];
 
   return (
-    <div className="bg-ink border-y-2 border-gold overflow-hidden">
+    <div className="bg-navy border-y-2 border-silver overflow-hidden">
       <div className="ticker-animate flex whitespace-nowrap py-2">
         {scores.map((score, i) => (
           <span key={i} className="inline-flex items-center mx-8">
-            <span className="headline-stamp text-gold text-xs tracking-wider">{score}</span>
+            <span className="headline-stamp text-white text-xs tracking-wider">{score}</span>
             <span className="ml-8 text-red text-xs">&#9670;</span>
           </span>
         ))}

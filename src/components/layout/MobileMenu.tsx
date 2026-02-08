@@ -16,17 +16,17 @@ export default function MobileMenu() {
         aria-label={open ? "Close menu" : "Open menu"}
       >
         <span
-          className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
             open ? "rotate-45 translate-y-2" : ""
           }`}
         />
         <span
-          className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
             open ? "opacity-0" : ""
           }`}
         />
         <span
-          className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
             open ? "-rotate-45 -translate-y-2" : ""
           }`}
         />
@@ -40,7 +40,7 @@ export default function MobileMenu() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="headline-stamp text-cream text-2xl tracking-widest hover:text-gold transition-colors"
+              className="headline-stamp text-white text-2xl tracking-widest hover:text-red transition-colors"
             >
               {link.label}
             </Link>

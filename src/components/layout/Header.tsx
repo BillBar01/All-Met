@@ -4,11 +4,11 @@ import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-navy border-b-4 border-gold">
+    <header className="sticky top-0 z-50 bg-navy border-b-4 border-red">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="headline-stamp text-gold text-2xl tracking-wider shrink-0">
+          <Link href="/" className="wordmark-metallic text-white text-2xl shrink-0">
             {SITE_NAME}
           </Link>
 
@@ -18,7 +18,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="headline-stamp text-cream text-xs xl:text-sm tracking-widest hover:text-gold transition-colors whitespace-nowrap"
+                className="headline-stamp text-white text-xs xl:text-sm tracking-widest hover:text-red transition-colors whitespace-nowrap"
               >
                 {link.label}
               </Link>
