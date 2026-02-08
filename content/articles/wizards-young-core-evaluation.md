@@ -2,9 +2,10 @@
 title: "Grading the Wizards' Young Core at the All-Star Break"
 author: "Bill Barlia"
 date: "2026-01-30"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Wizards"
 excerpt: "Halfway through the season, we evaluate every young piece on the Wizards roster. Some are trending up. Others... aren't."
+isPremium: false
 ---
 
 ## Midseason Report Cards

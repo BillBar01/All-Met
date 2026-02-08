@@ -2,8 +2,9 @@
 title: "DMV High School Basketball Power Rankings: February Edition"
 author: "Bill Barlia"
 date: "2026-02-03"
-section: "High School"
+category: "High School"
 excerpt: "Playoff basketball is approaching and the DMV landscape has shifted dramatically. Here's who's up, who's down, and who's peaking at the right time."
+isPremium: false
 ---
 
 ## The Standings Have Shuffled

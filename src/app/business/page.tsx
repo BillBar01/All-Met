@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getPostsBySection } from "@/lib/posts";
+import { getPostsByCategory } from "@/lib/posts";
 import BlogCard from "@/components/ui/BlogCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function BusinessPage() {
-  const posts = getPostsBySection("Business");
+  const posts = getPostsByCategory("Business");
 
   return (
     <div className="py-16 md:py-20">

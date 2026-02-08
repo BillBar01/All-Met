@@ -6,7 +6,7 @@ import html from "remark-html";
 import gfm from "remark-gfm";
 import type { Post, PostFrontmatter } from "@/types/blog";
 
-const postsDirectory = path.join(process.cwd(), "content/blog");
+const postsDirectory = path.join(process.cwd(), "content/articles");
 
 export function getPostSlugs(): string[] {
   return fs
@@ -41,11 +41,11 @@ export async function getPostContentHtml(content: string): Promise<string> {
   return result.toString();
 }
 
-export function getPostsBySection(section: string): Post[] {
+export function getPostsByCategory(category: string): Post[] {
   const posts = getAllPosts();
-  if (section === "All") return posts;
+  if (category === "All") return posts;
   return posts.filter(
-    (post) => post.section.toLowerCase() === section.toLowerCase()
+    (post) => post.category.toLowerCase() === category.toLowerCase()
   );
 }
 
@@ -56,12 +56,25 @@ export function getPostsByTeam(team: string): Post[] {
   );
 }
 
-export function getPostsBySectionAndTeam(
-  section: string,
+export function getPostsByCategoryAndTeam(
+  category: string,
   team?: string
 ): Post[] {
   if (team && team !== "All Teams") {
     return getPostsByTeam(team);
   }
-  return getPostsBySection(section);
+  return getPostsByCategory(category);
+}
+
+export function getPostsByAuthor(author: string): Post[] {
+  const posts = getAllPosts();
+  return posts.filter(
+    (post) => post.author.toLowerCase() === author.toLowerCase()
+  );
+}
+
+export function getAllAuthors(): string[] {
+  const posts = getAllPosts();
+  const authors = new Set(posts.map((post) => post.author));
+  return Array.from(authors);
 }

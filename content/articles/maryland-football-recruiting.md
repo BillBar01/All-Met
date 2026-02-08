@@ -2,9 +2,10 @@
 title: "Maryland Football Recruiting: The Terps Are Winning the DMV Battle"
 author: "Bill Barlia"
 date: "2026-01-18"
-section: "College"
+category: "College"
 team: "Maryland"
 excerpt: "Maryland is keeping local talent home, and it's starting to show up on the field. The recruiting strategy is working."
+isPremium: false
 ---
 
 ## Keeping Talent Home

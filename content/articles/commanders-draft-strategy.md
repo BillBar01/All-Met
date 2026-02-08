@@ -2,9 +2,10 @@
 title: "Commanders Draft Board: Who They Should Be Targeting"
 author: "Bill Barlia"
 date: "2026-02-05"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Commanders"
 excerpt: "The draft is approaching and Washington has some serious decisions to make. Here's who should be on their radar."
+isPremium: false
 ---
 
 ## The Needs Are Clear

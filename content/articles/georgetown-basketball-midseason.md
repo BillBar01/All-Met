@@ -2,9 +2,10 @@
 title: "Georgetown Basketball: The Hoyas Are Finally Showing Signs of Life"
 author: "Bill Barlia"
 date: "2026-01-27"
-section: "College"
+category: "College"
 team: "Georgetown"
 excerpt: "After years of irrelevance, Georgetown basketball is showing flickers of competence. Is this the start of something real?"
+isPremium: false
 ---
 
 ## A Pulse in the Hilltop

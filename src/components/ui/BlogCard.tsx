@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { format } from "date-fns";
 import type { Post } from "@/types/blog";
@@ -10,12 +12,16 @@ function getCategoryBarClass(post: Post): string {
   if (post.team) {
     return `category-bar-${post.team.toLowerCase().replace(/\s+/g, "-")}`;
   }
-  return `category-bar-${post.section.toLowerCase().replace(/\s+/g, "-")}`;
+  return `category-bar-${post.category.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
+function toKebabCase(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, "-");
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
   const categoryClass = getCategoryBarClass(post);
-  const label = post.team || post.section;
+  const label = post.team || post.category;
 
   return (
     <Link href={`/articles/${post.slug}`} className="block">
@@ -46,7 +52,14 @@ export default function BlogCard({ post }: BlogCardProps) {
 
           {/* Author */}
           <p className="typewriter-accent text-silver text-xs mt-4">
-            By {post.author}
+            By{" "}
+            <Link
+              href={`/authors/${toKebabCase(post.author)}`}
+              className="hover:text-red transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {post.author}
+            </Link>
           </p>
         </div>
       </article>

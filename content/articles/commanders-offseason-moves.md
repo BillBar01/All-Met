@@ -2,9 +2,10 @@
 title: "The Commanders' Offseason Is Either Genius or Insanity"
 author: "Bill Barlia"
 date: "2026-02-01"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Commanders"
 excerpt: "Washington is making moves this offseason that could reshape the NFC East. We break down the strategy behind the chaos."
+isPremium: false
 ---
 
 ## The Big Picture

@@ -2,8 +2,9 @@
 title: "All-Met Football Selections: The DMV's Best Just Got Recognized"
 author: "Bill Barlia"
 date: "2026-01-15"
-section: "High School"
+category: "High School"
 excerpt: "Our annual All-Met high school football picks are here. These are the players who dominated the DMV this season."
+isPremium: false
 ---
 
 ## The All-Met Selections Are In

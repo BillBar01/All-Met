@@ -2,9 +2,10 @@
 title: "DC United Season Preview: Low Expectations, High Hopes"
 author: "Bill Barlia"
 date: "2026-02-06"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "DC United"
 excerpt: "Nobody is picking DC United to win anything this year. That might actually be a good thing."
+isPremium: false
 ---
 
 ## Embrace the Underdog

@@ -2,9 +2,10 @@
 title: "DC United's Academy Is Quietly Producing Real Talent"
 author: "Bill Barlia"
 date: "2026-01-20"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "DC United"
 excerpt: "While the first team struggles, DC United's youth development pipeline is turning out players that bigger clubs are noticing."
+isPremium: false
 ---
 
 ## The Hidden Success Story

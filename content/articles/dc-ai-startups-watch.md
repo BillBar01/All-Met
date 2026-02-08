@@ -2,8 +2,9 @@
 title: "Five DC AI Startups You Should Actually Pay Attention To"
 author: "Bill Barlia"
 date: "2026-02-07"
-section: "Business"
+category: "Business"
 excerpt: "Forget the hype. These five DC-based AI companies are building real products that solve real problems."
+isPremium: false
 ---
 
 ## Cutting Through the AI Noise

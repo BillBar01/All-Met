@@ -2,9 +2,10 @@
 title: "The Capitals Have a Goaltending Problem They Can't Ignore"
 author: "Bill Barlia"
 date: "2026-01-22"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Capitals"
 excerpt: "Behind every blown lead is a goaltending situation that the front office needs to address before the deadline."
+isPremium: false
 ---
 
 ## The Numbers Don't Lie

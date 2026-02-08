@@ -2,9 +2,10 @@
 title: "Wizards: Is This Tanking or Rebuilding? Because There's a Difference"
 author: "Bill Barlia"
 date: "2026-02-03"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Wizards"
 excerpt: "Washington's basketball team is bad. The question is whether they're bad with purpose or just bad."
+isPremium: false
 ---
 
 ## Let's Be Honest

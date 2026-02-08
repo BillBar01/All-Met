@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { format } from "date-fns";
 import { getPostSlugs, getPostBySlug, getPostContentHtml } from "@/lib/posts";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -17,32 +18,47 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      authors: [post.author],
+      publishedTime: post.date,
+    },
   };
 }
 
-function getCategoryBarClass(section: string, team?: string): string {
+function getCategoryBarClass(category: string, team?: string): string {
   if (team) {
     return `category-bar-${team.toLowerCase().replace(/\s+/g, "-")}`;
   }
-  return `category-bar-${section.toLowerCase().replace(/\s+/g, "-")}`;
+  return `category-bar-${category.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
+function getBackLink(category: string): { href: string; label: string } {
+  if (category === "Business") {
+    return { href: "/business", label: "Back to Business" };
+  }
+  return { href: "/sports", label: "Back to Sports" };
 }
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   const contentHtml = await getPostContentHtml(post.content);
-  const categoryClass = getCategoryBarClass(post.section, post.team);
-  const label = post.team || post.section;
+  const categoryClass = getCategoryBarClass(post.category, post.team);
+  const label = post.team || post.category;
+  const backLink = getBackLink(post.category);
 
   return (
     <article className="py-16 md:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Back link */}
         <Link
-          href="/sports"
+          href={backLink.href}
           className="headline-stamp text-red text-sm tracking-wider hover:text-navy transition-colors mb-8 inline-block"
         >
-          &larr; Back to Sports
+          &larr; {backLink.label}
         </Link>
 
         {/* Header */}
@@ -59,7 +75,7 @@ export default async function PostPage({ params }: Props) {
               <>
                 <span className="text-silver">|</span>
                 <span className="headline-stamp text-navy/60 tracking-wider text-xs">
-                  {post.section}
+                  {post.category}
                 </span>
               </>
             )}
@@ -80,10 +96,18 @@ export default async function PostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
 
+        {/* Newsletter CTA */}
+        <div className="mt-16 pt-8 border-t-3 border-navy/10">
+          <h3 className="headline-stamp text-navy text-xl mb-4">
+            Get takes like this delivered daily
+          </h3>
+          <NewsletterSignup />
+        </div>
+
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t-3 border-red">
+        <div className="mt-10 pt-8 border-t-3 border-red">
           <Link
-            href="/sports"
+            href={backLink.href}
             className="retro-button bg-navy text-white text-sm"
           >
             More Articles

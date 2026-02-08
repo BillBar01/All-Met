@@ -2,9 +2,10 @@
 title: "Nationals Spring Training: Five Storylines to Watch"
 author: "Bill Barlia"
 date: "2026-02-04"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Nationals"
 excerpt: "Camp opens soon and there are real position battles this year. Here's what to pay attention to in West Palm Beach."
+isPremium: false
 ---
 
 ## It's Almost Time

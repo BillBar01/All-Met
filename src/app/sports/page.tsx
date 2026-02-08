@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { getAllPosts, getPostsBySection, getPostsBySectionAndTeam } from "@/lib/posts";
+import { getAllPosts, getPostsByCategory, getPostsByCategoryAndTeam } from "@/lib/posts";
 import { PRO_TEAMS, COLLEGE_TEAMS } from "@/lib/constants";
 import BlogCard from "@/components/ui/BlogCard";
 import CategoryFilter from "@/components/ui/CategoryFilter";
@@ -25,7 +25,7 @@ export default async function SportsPage({ searchParams }: Props) {
   if (activeSection === "All" || !section) {
     // Show all sports posts (Pro Sports + College + High School — not Business)
     const allPosts = getAllPosts().filter(
-      (p) => p.section !== "Business"
+      (p) => p.category !== "Business"
     );
     content = (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,7 +79,7 @@ export default async function SportsPage({ searchParams }: Props) {
       </div>
     );
   } else if (activeSection === "High School") {
-    const posts = getPostsBySection("High School");
+    const posts = getPostsByCategory("High School");
     content = (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
@@ -89,7 +89,7 @@ export default async function SportsPage({ searchParams }: Props) {
     );
   } else {
     // Specific team selected
-    const posts = getPostsBySectionAndTeam(activeSection, team);
+    const posts = getPostsByCategoryAndTeam(activeSection, team);
     content = (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (

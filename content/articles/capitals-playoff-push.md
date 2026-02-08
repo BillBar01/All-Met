@@ -2,9 +2,10 @@
 title: "Capitals Playoff Push: What It'll Take to Get In"
 author: "Bill Barlia"
 date: "2026-02-02"
-section: "Pro Sports"
+category: "Pro Sports"
 team: "Capitals"
 excerpt: "The Caps are on the bubble. Here's the math, the matchups, and the moves that could make or break their postseason hopes."
+isPremium: false
 ---
 
 ## The Situation
